@@ -1,0 +1,13 @@
+<div class="private-office-caption"><h1>Шаблоны</h1></div>
+
+<app-search-bar
+  placeholder="Название шаблона"
+  [options]="templateName | async"
+  (searchEvent)="startSearch($event)"
+></app-search-bar>
+
+<app-templates-table
+  [items]="templates | async"
+  (sortEvent)="startSort($event)"
+  (itemEvents)="handleAction($event)"
+></app-templates-table>
